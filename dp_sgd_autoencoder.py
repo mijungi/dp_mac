@@ -4,9 +4,7 @@ import numpy as np
 from scipy.io import loadmat
 import argparse
 import os
-
-
-basedir = '/home/'  # enter project directory
+from dp_mac_utils.data_handling import usps_data_path
 
 
 def update_dp_sgd_op(loss, z_list, w_list, h_list, sigma, lr, layerwise_clip, max_bound=4.):
@@ -69,11 +67,10 @@ def get_sdevs(sigma, max_bound, w_ps_grads, layerwise_clip):
 
 
 def usps_data(x_bound=None):
-    file_path = os.path.join(basedir, 'data/usps/usps_all.mat')
     train_set_size = 5000
     test_set_size = 5000
 
-    source_mat = loadmat(file_path)['data']
+    source_mat = loadmat(usps_data_path)['data']
     train_per_label = train_set_size // 10
     test_per_label = test_set_size // 10
     train_data, test_data = [], []
@@ -218,7 +215,7 @@ def train_dpsgd_ae(bs, n_epochs, lr, lr_decay, sigma, layerwise_clip, max_bound)
 
 
 def save_logs(train_log, test_log, name):
-    save_dir = os.path.join(basedir, 'results/{}'.format(name))
+    save_dir = 'results/{}'.format(name)
     if not os.path.exists(save_dir):
         os.makedirs(save_dir)
     np.save(os.path.join(save_dir, 'train_log.npy'), train_log)
@@ -233,10 +230,10 @@ def parse_arguments():
     parser.add_argument('--num_epochs', '-ep', type=int, default=None)  # number of training epochs
     parser.add_argument('--batch_size', '-bs', type=int, default=None)  # batch size
     parser.add_argument('--learning_rate', '-lr', type=float, default=None)
-    parser.add_argument('--lr_decay', '-decay', type=float, default=None)
+    parser.add_argument('--lr_decay', '-decay', type=float, default=None)  # exponential decay factor per epoch
     parser.add_argument('--sigma', '-dp', type=float, default=None)
     parser.add_argument('--max_bound', '-tg', type=float, default=None)
-    parser.add_argument('--layerwise_clip', dest='layerwise_clip', action='store_true')
+    parser.add_argument('--layerwise_clip', dest='layerwise_clip', action='store_true')  # enable layer-wise clipping
     return parser.parse_args()
 
 

@@ -12,7 +12,7 @@ def read_errors(file_path):
 
 
 def ae_convergence_plot(shared_prefix, suffixes, modes, plot_file,
-                        start_dir='../../results/', te_err_file='test_errors.npy', tr_err_file='train_errors.npy'):
+                        start_dir='../results/', te_err_file='test_errors.npy', tr_err_file='train_errors.npy'):
 
     def make_data_mat(exp_prefix, err_file):
         exp_dirs = [k for k in os.listdir(start_dir) if k.startswith(exp_prefix)]
@@ -70,7 +70,7 @@ def ae_convergence_plot(shared_prefix, suffixes, modes, plot_file,
 
 
 def cl_convergence_plot(shared_prefix, suffixes, modes, plot_file,
-                        start_dir='../../results/', te_err_file='test_errors.npy', tr_err_file='train_errors.npy'):
+                        start_dir='../results/', te_err_file='test_errors.npy', tr_err_file='train_errors.npy'):
 
     def make_data_mat(exp_prefix, err_file):
         exp_dirs = [k for k in os.listdir(start_dir) if k.startswith(exp_prefix)]
@@ -134,7 +134,7 @@ def cl_convergence_plot(shared_prefix, suffixes, modes, plot_file,
 
 
 def sgd_ae_convergence_plot(shared_prefix, suffixes, modes, plot_file,
-                            start_dir='../../results/', tr_err_file='train_log.npy', te_err_file='test_log.npy'):
+                            start_dir='../results/', tr_err_file='train_log.npy', te_err_file='test_log.npy'):
 
     def make_data_mat(exp_prefix, err_file):
         print([k for k in os.listdir(start_dir) if k.startswith('grid')], exp_prefix)
@@ -200,19 +200,19 @@ if __name__ == '__main__':
     #                     suffixes=('0', '1', '4', '3'),
     #                     modes=['$\epsilon=8$', '$\epsilon=2$', '$\epsilon=0.5$', 'NP'],
     #                     plot_file='dp-mac-cl-convergence.png',
-    #                     start_dir='../../results/gridsearch_cl_all_eps_v1/',
+    #                     start_dir='../results/gridsearch_cl_all_eps_v1/',
     #                     tr_err_file='train_errors.npy', te_err_file='test_errors.npy')
 
     # ae_convergence_plot('run_v',
     #                     ['3', '2', '1', '0', '4'],
     #                     ['$\epsilon=1$', '$\epsilon=2$', '$\epsilon=4$', '$\epsilon=8$', 'NP'],
     #                     'dp-mac-ae-convergence.png',
-    #                     start_dir='../../results/gridsearch_ae_all_eps_v1/',
+    #                     start_dir='../results/gridsearch_ae_all_eps_v1/',
     #                     tr_err_file='train_errors.npy', te_err_file='test_errors.npy')
 
     sgd_ae_convergence_plot('run_v',
                             ['3', '2', '1', '0', '4'],
                             ['$\epsilon=1$', '$\epsilon=2$',  '$\epsilon=4$', '$\epsilon=8$', 'NP'],
                             'dp-sgd-ae-convergence.png',
-                            start_dir='../../results/gridsearch_dpsgd_ae_v1/',
+                            start_dir='../results/gridsearch_dpsgd_ae_v1/',
                             tr_err_file='train_log.npy', te_err_file='test_log.npy')

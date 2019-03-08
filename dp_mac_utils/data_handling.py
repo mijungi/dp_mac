@@ -5,6 +5,9 @@ from scipy.io import loadmat
 from collections import namedtuple
 from dp_mac_utils.dp_pca import pca_preprocess
 
+
+usps_data_path = 'data/usps/usps_all.mat'
+
 xy_data = namedtuple('xy_data', ['x', 'y'])
 data_loader = namedtuple('data_loader', ['feed_sampler_op', 'iter', 'get_next_op', 'train_dict', 'test_dict'])
 
@@ -17,7 +20,7 @@ def get_datasets(args):
     return read_usps_data(args) if args.dataset == 'usps' else read_mnist_data(args)
 
 
-def read_usps_data(args, file_path='../data/usps/usps_all.mat'):
+def read_usps_data(args, file_path=usps_data_path):
     """
     loads usps dataset from matlab file
     :param args: run arguments

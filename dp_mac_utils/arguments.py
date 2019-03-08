@@ -41,7 +41,7 @@ def parse_arguments(direct_feed=None):
     parser.add_argument('--dp_pca_sigma', '-pca_sigma', type=float, default=None)
 
     # logging
-    parser.add_argument('--result_dir', type=str, default='../results')  # directory for storing results
+    parser.add_argument('--result_dir', type=str, default='results')  # directory for storing results
     parser.add_argument('--log_w_opt', dest='log_w_opt', action='store_true')  # if true, make logs during w-step
     parser.add_argument('--log_z_opt', dest='log_z_opt', action='store_true')  # if true, logs z step convergence
     parser.add_argument('--log_train_stats', dest='log_train_stats', action='store_true')  # if true, logs train-eval
@@ -125,9 +125,9 @@ def handle_special_setups(args):
     setups['DP-AE'] = [('model_type', 'autoencoder'), ('topology', '300,100,20,100,300'), ('dataset', 'usps'),
                        ('w_optim', 'adam'), ('z_optim', 'adam')]
 
-    # args to set for DP-MLP: -name, -ep, -bs, -wlr, -zlr, -wlrdecay, -zit, -tdt -dp
-    setups['DP-MLP'] = [('model_type', 'classifier'), ('topology', '300'), ('dataset', 'mnist'),
-                        ('w_optim', 'adam'), ('z_optim', 'adam')]
+    # args to set for DP-CL: -name, -ep, -bs, -wlr, -zlr, -wlrdecay, -zit, -tdt -dp
+    setups['DP-CL'] = [('model_type', 'classifier'), ('topology', '300'), ('dataset', 'mnist'),
+                       ('w_optim', 'adam'), ('z_optim', 'adam')]
 
     assert name in setups.keys()
 
