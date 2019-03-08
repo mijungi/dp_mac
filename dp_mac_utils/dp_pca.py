@@ -1,3 +1,4 @@
+# __author__ = 'frederik harder'
 import numpy as np
 
 

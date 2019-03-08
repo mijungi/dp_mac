@@ -1,3 +1,4 @@
+# __author__ = 'frederik harder'
 import tensorflow as tf
 from collections import namedtuple
 

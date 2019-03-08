@@ -1,5 +1,6 @@
+# __author__ = 'frederik harder'
 import tensorflow as tf
-from tf_utils.mac_testing import logger
+from dp_mac_utils.mac_testing import logger
 
 
 def get_fc_mse_loss(tgt, ipt, w, pert, dt_bound, layer):

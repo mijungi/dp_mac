@@ -1,6 +1,7 @@
+# __author__ = 'frederik harder'
 import numpy as np
 import tensorflow as tf
-from tf_utils.mac_testing import logger
+from dp_mac_utils.mac_testing import logger
 
 
 def opt_var_init_ops(global_w_step, w_list):

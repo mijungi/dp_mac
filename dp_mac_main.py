@@ -1,14 +1,15 @@
+# __author__ = 'frederik harder'
+import numpy as np
 import tensorflow as tf
 import os
-import numpy as np
 from collections import namedtuple
 
-from tf_utils.arguments import parse_arguments
-from tf_utils.data_handling import get_data_loader
-from tf_utils.mac_model import get_params, fwd_model, z_mac_model, init_zs_fwd, w_mac_model
-from tf_utils.mac_testing import train_set_validation, test_set_validation, log_args, log_errors, logger
-from tf_utils.optimizers import get_optimizers
-from tf_utils.mac_training import opt_var_init_ops, train_epoch
+from dp_mac_utils.arguments import parse_arguments
+from dp_mac_utils.data_handling import get_data_loader
+from dp_mac_utils.mac_model import get_params, fwd_model, z_mac_model, init_zs_fwd, w_mac_model
+from dp_mac_utils.mac_testing import train_set_validation, test_set_validation, log_args, log_errors, logger
+from dp_mac_utils.optimizers import get_optimizers
+from dp_mac_utils.mac_training import opt_var_init_ops, train_epoch
 
 
 def main():

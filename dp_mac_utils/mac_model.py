@@ -1,7 +1,8 @@
+# __author__ = 'frederik harder'
 import numpy as np
 import tensorflow as tf
-from tf_utils.dp_losses import get_fc_mse_loss, get_fc_cce_loss
-from tf_utils.dp_sampler import get_layer_perturbation
+from dp_mac_utils.dp_losses import get_fc_mse_loss, get_fc_cce_loss
+from dp_mac_utils.dp_sampler import get_layer_perturbation
 
 
 def get_params(args):

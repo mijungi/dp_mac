@@ -1,3 +1,4 @@
+# __author__ = 'frederik harder'
 import tensorflow as tf
 import numpy as np
 from scipy.io import loadmat
@@ -5,9 +6,7 @@ import argparse
 import os
 
 
-remote = '/is/ei/fharder/code/dp_mac_code/'
-local = '/home/frederik/PycharmProjects/dp_mac/'
-basedir = local if os.path.exists(local) else remote
+basedir = '/home/'  # enter project directory
 
 
 def update_dp_sgd_op(loss, z_list, w_list, h_list, sigma, lr, layerwise_clip, max_bound=4.):

@@ -1,8 +1,9 @@
+# __author__ = 'frederik harder'
 import numpy as np
 import tensorflow as tf
 from scipy.io import loadmat
 from collections import namedtuple
-from tf_utils.dp_pca import pca_preprocess
+from dp_mac_utils.dp_pca import pca_preprocess
 
 xy_data = namedtuple('xy_data', ['x', 'y'])
 data_loader = namedtuple('data_loader', ['feed_sampler_op', 'iter', 'get_next_op', 'train_dict', 'test_dict'])
