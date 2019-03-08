@@ -1,12 +1,13 @@
 # dp_mac
 
-This repository contains an implementation of __DP-MAC: The Differentially Private Method of Auxiliary Coordinates for Deep Learning__ our submission to the Workshop on Privacy Preserving Machine Learning. The paper is available [HERE](https://ppml-workshop.github.io/ppml/papers/67.pdf)
+This repository contains an implementation of __DP-MAC: The Differentially Private Method of Auxiliary Coordinates for Deep Learning__, our submission to the Workshop on Privacy Preserving Machine Learning. The paper is available [HERE](https://ppml-workshop.github.io/ppml/papers/67.pdf) (soon to be updated)
 
-### Setup
+
+## Setup
 
 After cloning the repository, you should be good to go! Just `cd` to the project directory and call `dp_mac_main.py`.
 
-### Dependencies (along with used version)
+### Dependencies
     python 3.6
     tensorflow 1.12.0
     numpy 1.14.3
@@ -43,33 +44,41 @@ After cloning the repository, you should be good to go! Just `cd` to the project
 See `dp_mac_utils/arguments.py` for all arguments taken by `dp_mac_main.py` The following settings reproduce our results:
 
 ### DP-MAC classifier
-epsilon=8
+- epsilon=8
 `python3.6 dp_mac_main.py -setup DP-CL -ep 30 -bs 1000 -zit 30 -pca 60 -tdt 0.3 -pca_sigma 4. -dp 1.0 -wlr 1e-2 -zlr 3e-3 -wlrdecay 0.95 -stop_decay 20 -name test_cl_eps8`
-epsilon=2
+
+- epsilon=2
 `python3.6 dp_mac_main.py -setup DP-CL -ep 30 -bs 1000 -zit 30 -pca 60 -tdt 0.3 -pca_sigma 8. -dp 2.8 -wlr 1e-2 -zlr 3e-3 -wlrdecay 0.95 -stop_decay 20 -name test_cl_eps2`
-epsilon=0.5
+
+- epsilon=0.5
 `python3.6 dp_mac_main.py -setup DP-CL -ep 10 -bs 500 -zit 30 -pca 60 -tdt 0.3 -pca_sigma 16. -dp 4.4 -wlr 0.03 -zlr 0.01 -wlrdecay 0.70 -stop_decay 7 -name test_cl_eps0_5`
 
 
 ### DP-MAC Autoencoder
-epsilon=8
+- epsilon=8
 `python3.6 dp_mac_main.py -setup DP-AE -ep 50 -bs 500 -zit 30 -wlr 3e-3 -wlrdecay .97 -tdt 1e-3 -zlr 1e-3 -dp 1.8 -name test_ae_eps8`
-epsilon=4
+
+- epsilon=4
 `python3.6 dp_mac_main.py -setup DP-AE -ep 50 -bs 500 -zit 30 -wlr 3e-3 -wlrdecay .97 -tdt 1e-3 -zlr 1e-3 -dp 3.1 -name test_ae_eps4`
-epsilon=2
+
+- epsilon=2
 `python3.6 dp_mac_main.py -setup DP-AE -ep 50 -bs 250 -zit 30 -wlr 3e-3 -wlrdecay .97 -tdt 1e-3 -zlr 1e-3 -dp 4.1 -name test_ae_eps2`
-epsilon=1
+
+- epsilon=1
 `python3.6 dp_mac_main.py -setup DP-AE -ep 50 -bs 250 -zit 30 -wlr 3e-3 -wlrdecay .97 -tdt 1e-3 -zlr 1e-3 -dp 7.8 -name test_ae_eps1`
 
 
 ### DP-SGD Autoencoder
-epsilon=8
+- epsilon=8
 `python3.6 dp_sgd_autoencoder.py -ep 100 -bs 500 -lr 100. -decay .99 -tg .01 -dp 2.4 -name test_dpsgd_eps8`
-epsilon=4
+
+- epsilon=4
 `python3.6 dp_sgd_autoencoder.py -ep 100 -bs 500 -lr 100. -decay .99 -tg .01 -dp 4.3 -name test_dpsgd_eps4`
-epsilon=2
+
+- epsilon=2
 `python3.6 dp_sgd_autoencoder.py -ep 100 -bs 250 -lr 50. -decay .96 -tg .01 -dp 5.7 -name test_dpsgd_eps2`
-epsilon=1
+
+- epsilon=1
 `python3.6 dp_sgd_autoencoder.py -ep 100 -bs 250 -lr 30. -decay .96 -tg .01 -dp 11. -name test_dpsgd_eps1`
 
 
