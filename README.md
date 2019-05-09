@@ -1,6 +1,6 @@
 # dp_mac
 
-This repository contains an implementation of __DP-MAC: The Differentially Private Method of Auxiliary Coordinates for Deep Learning__, our submission to the Workshop on Privacy Preserving Machine Learning at NeurIPS2018. The paper is available: https://ppml-workshop.github.io/ppml/papers/67_main.pdf 
+This repository contains an implementation of __DP-MAC: The Differentially Private Method of Auxiliary Coordinates for Deep Learning__, our submission to the Workshop on Privacy Preserving Machine Learning at NeurIPS2018. The paper is available: https://ppml-workshop.github.io/ppml/ppml18/papers/67_main.pdf 
 
 ## Setup
 
